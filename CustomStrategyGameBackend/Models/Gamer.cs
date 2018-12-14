@@ -15,7 +15,7 @@ namespace CustomStrategyGameBackend.Models
         public string Uname { get; set; }
         [Required, StringLength(50), Index(IsUnique = true)]
         public string Email_Id { get; set; }
-        [Required, MaxLength(128)]
+        [Required, MaxLength(64)]
         public string Password { get; set; }
         [Required]
         public bool IsOnline { get; set; }
