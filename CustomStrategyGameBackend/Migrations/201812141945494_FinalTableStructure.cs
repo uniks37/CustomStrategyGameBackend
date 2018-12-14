@@ -3,7 +3,7 @@ namespace CustomStrategyGameBackend.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TableDetailsRefined : DbMigration
+    public partial class FinalTableStructure : DbMigration
     {
         public override void Up()
         {
@@ -14,7 +14,7 @@ namespace CustomStrategyGameBackend.Migrations
                         Id = c.Long(nullable: false, identity: true),
                         Uname = c.String(nullable: false, maxLength: 32),
                         Email_Id = c.String(nullable: false, maxLength: 50),
-                        Password = c.String(nullable: false, maxLength: 128),
+                        Password = c.String(nullable: false, maxLength: 64),
                         IsOnline = c.Boolean(nullable: false),
                         Games_Won = c.Long(nullable: false),
                         Games_Lost = c.Long(nullable: false),
@@ -29,7 +29,7 @@ namespace CustomStrategyGameBackend.Migrations
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
-                        Login_Session_Id = c.String(maxLength: 128),
+                        Login_Session_Id = c.String(nullable: false, maxLength: 128),
                         Gamer_Id = c.Long(nullable: false),
                         Timestamp = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
                     })
@@ -43,7 +43,7 @@ namespace CustomStrategyGameBackend.Migrations
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
-                        Session_Id = c.String(maxLength: 128),
+                        Session_Id = c.String(nullable: false, maxLength: 128),
                         Gamer_Id = c.Long(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -56,7 +56,7 @@ namespace CustomStrategyGameBackend.Migrations
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
-                        Session_Id = c.String(maxLength: 128),
+                        Session_Id = c.String(nullable: false, maxLength: 128),
                         Timestamp = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
                         Board_Id = c.String(maxLength: 128),
                         Status = c.Boolean(nullable: false),
@@ -70,8 +70,8 @@ namespace CustomStrategyGameBackend.Migrations
                 c => new
                     {
                         Id = c.Long(nullable: false, identity: true),
-                        temp_Id = c.String(maxLength: 128),
-                        Temp_Session_Id = c.String(maxLength: 128),
+                        temp_Id = c.String(nullable: false, maxLength: 128),
+                        Temp_Session_Id = c.String(nullable: false, maxLength: 128),
                         Gamer1_Id = c.Long(nullable: false),
                         Gamer2_Id = c.Long(nullable: false),
                     })

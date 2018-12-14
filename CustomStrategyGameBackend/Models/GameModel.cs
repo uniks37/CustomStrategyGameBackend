@@ -40,7 +40,13 @@ namespace CustomStrategyGameBackend.Models
                 .HasRequired<Gamer>(ls => ls.Gamer)
                 .WithMany(g => g.LoginSessions)
                 .HasForeignKey<long>(ls => ls.Gamer_Id);
-            
+
+            //Properties
+            modelBuilder.Entity<LoginSession>()
+                .Property(ls => ls.Timestamp).IsConcurrencyToken();
+            modelBuilder.Entity<GameSession>()
+                .Property(gs => gs.Timestamp).IsConcurrencyToken();
+
         }
     }
 }

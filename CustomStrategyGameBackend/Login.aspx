@@ -37,13 +37,12 @@
                         <div class="form-group form-row">
                             <label class="col-form-label col-md-3" for="unamepass">Password</label>
                             <div class="col-md-7">
-                                <asp:HiddenField ID="unamepass" runat="server" CssClass="form-control"/>
-                            </div>
+                                <asp:TextBox ID="passtxt" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox></div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="form-group">
                             <div class="form-check">
-                                <asp:CheckBox ID="remMe" runat="server" CssClass="form-check-input"/>
+                                <asp:CheckBox ID="remMe" runat="server" CssClass="form-check-input" OnCheckedChanged="remMe_CheckedChanged"/>
                                 <asp:Label ID="remMeLbl" runat="server" Text="Label" CssClass="form-check-label">Keep me posted</asp:Label>
                                 
                             </div>

@@ -15,7 +15,7 @@ namespace CustomStrategyGameBackend.Models
         [Required, StringLength(128), DatabaseGenerated(DatabaseGeneratedOption.None), Index(IsUnique = true)]
         public string Login_Session_Id { get; set; }
         public long Gamer_Id { get; set; }
-        [Required, Timestamp, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [Timestamp, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public Byte[] Timestamp { get; set; }
 
         public Gamer Gamer { get; set; }

@@ -9,7 +9,7 @@ namespace CustomStrategyGameBackend.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(CustomStrategyGameBackend.Models.GameModel context)

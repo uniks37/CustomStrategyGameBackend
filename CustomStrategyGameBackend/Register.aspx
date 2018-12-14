@@ -26,7 +26,7 @@
                 <div class="jumbotron">
                     <div class="clearfix">
                         <p class="font-weight-bold" style="font-size: large">Register</p>
-                        <hr>
+                        <hr/>
                         <div class="form-group form-row">
                             <label class="col-form-label col-md-3" for="emailtxt">Email-Id</label>
                             <div class="col-md-7">
@@ -55,8 +55,11 @@
                             </div>
                             <div class="col-md-2"></div>
                         </div>
-                        <hr>
+                        <hr/>
                         <asp:Button ID="regBtn" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="regBtn_Click"/>
+                        <div class="form-group">
+                            <asp:HyperLink ID="loginLink" runat="server" CssClass="float-md-right" NavigateUrl="~/Login.aspx">Recalled Password</asp:HyperLink>
+                        </div>
                     </div>
                 </div>
             </div>

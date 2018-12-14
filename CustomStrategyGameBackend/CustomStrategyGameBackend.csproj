@@ -202,11 +202,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -218,6 +213,7 @@
     <Content Include="Login.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="MainPage.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -241,6 +237,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -285,8 +282,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ComModels\CollectionClasses.cs" />
     <Compile Include="Communicators\LoginCommunicator.cs" />
-    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Communicators\RegistrationCommunicator.cs" />
+    <Compile Include="Controllers\GameSessionController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Encryptors\NewToken.cs" />
+    <Compile Include="Facades\AccessUpdateFacade.cs" />
+    <Compile Include="Facades\GameSessionInitiatorFacade.cs" />
+    <Compile Include="Facades\LogoutFacade.cs" />
     <Compile Include="ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -308,17 +313,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logger\LogGenerator.cs" />
-    <Compile Include="Migrations\201812122059121_TableDetailsRefined.cs" />
-    <Compile Include="Migrations\201812122059121_TableDetailsRefined.Designer.cs">
-      <DependentUpon>201812122059121_TableDetailsRefined.cs</DependentUpon>
+    <Compile Include="MainPage.aspx.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Migrations\201812122103237_TableDetailsRefinedV2.cs" />
-    <Compile Include="Migrations\201812122103237_TableDetailsRefinedV2.Designer.cs">
-      <DependentUpon>201812122103237_TableDetailsRefinedV2.cs</DependentUpon>
+    <Compile Include="MainPage.aspx.designer.cs">
+      <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201812122216113_SomeRectifications.cs" />
-    <Compile Include="Migrations\201812122216113_SomeRectifications.Designer.cs">
-      <DependentUpon>201812122216113_SomeRectifications.cs</DependentUpon>
+    <Compile Include="Migrations\201812141945494_FinalTableStructure.cs" />
+    <Compile Include="Migrations\201812141945494_FinalTableStructure.Designer.cs">
+      <DependentUpon>201812141945494_FinalTableStructure.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Encrypt.cs" />
@@ -368,14 +372,8 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812122059121_TableDetailsRefined.resx">
-      <DependentUpon>201812122059121_TableDetailsRefined.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812122103237_TableDetailsRefinedV2.resx">
-      <DependentUpon>201812122103237_TableDetailsRefinedV2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812122216113_SomeRectifications.resx">
-      <DependentUpon>201812122216113_SomeRectifications.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812141945494_FinalTableStructure.resx">
+      <DependentUpon>201812141945494_FinalTableStructure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

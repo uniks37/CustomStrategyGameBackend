@@ -7,13 +7,13 @@ namespace CustomStrategyGameBackend.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class TableDetailsRefined : IMigrationMetadata
+    public sealed partial class FinalTableStructure : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(TableDetailsRefined));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(FinalTableStructure));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812122059121_TableDetailsRefined"; }
+            get { return "201812141945494_FinalTableStructure"; }
         }
         
         string IMigrationMetadata.Source
