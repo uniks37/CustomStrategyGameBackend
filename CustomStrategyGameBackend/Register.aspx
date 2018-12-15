@@ -31,8 +31,8 @@
                             <label class="col-form-label col-md-3" for="emailtxt">Email-Id</label>
                             <div class="col-md-7">
                                 <asp:TextBox ID="emailtxt" runat="server" CssClass="form-control" TextMode="Email" AutoCompleteType="Email"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="emailReq" runat="server" ErrorMessage="Email is required." ControlToValidate="emailtxt" CssClass="alert-danger" ></asp:RequiredFieldValidator>
-                                </div>
+                                <asp:RequiredFieldValidator ID="emailReq" runat="server" ErrorMessage="Email is required." ControlToValidate="emailtxt" CssClass="alert-danger"></asp:RequiredFieldValidator>
+                            </div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="form-group form-row">
@@ -40,14 +40,14 @@
                             <div class="col-md-7">
                                 <asp:TextBox ID="unametxt" runat="server" CssClass="form-control"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="unameReq" runat="server" ErrorMessage="Username is required." ControlToValidate="unametxt" CssClass="alert-danger"></asp:RequiredFieldValidator>
-                                </div>
+                            </div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="form-group form-row">
                             <asp:Label ID="passtxtLbl" runat="server" Text="Password" CssClass="col-form-label col-md-3"></asp:Label>
                             <div class="col-md-7">
                                 <asp:TextBox ID="passtxt" MaxLength="16" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
-                                <asp:RegularExpressionValidator ID="passtxtReg" runat="server" ErrorMessage="Password must be 8-16 characters long" ControlToValidate="passtxt" CssClass="alert-danger" ValidationExpression="\s*\S.{8,16}\S\s*" ></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="passtxtReg" runat="server" ErrorMessage="Password must be 8-16 characters long" ControlToValidate="passtxt" CssClass="alert-danger" ValidationExpression="\s*\S.{8,16}\S\s*"></asp:RegularExpressionValidator>
                             </div>
                             <div class="col-md-2">
                                 <asp:RequiredFieldValidator ID="passtxtReq" runat="server" ErrorMessage="Password is required." ControlToValidate="passtxt" CssClass="alert-danger"></asp:RequiredFieldValidator>
@@ -59,9 +59,10 @@
                             <div class="col-md-7">
                                 <asp:TextBox ID="passverifytxt" MaxLength="16" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="passverifytxtReq" runat="server" ErrorMessage="Verification Password is required." ControlToValidate="passverifytxt" CssClass="alert-danger"></asp:RequiredFieldValidator>
-                                </div>
+                            </div>
                             <div class="col-md-2">
-                                <asp:CompareValidator ID="passverifytxtCmp" runat="server" ErrorMessage="Passwords Do Not Match" CssClass="alert-warning" ControlToCompare="passtxt" ControlToValidate="passverifytxt" Operator="Equal" Type="String"></asp:CompareValidator></div>
+                                <asp:CompareValidator ID="passverifytxtCmp" runat="server" ErrorMessage="Passwords Do Not Match" CssClass="alert-warning" ControlToCompare="passtxt" ControlToValidate="passverifytxt" Operator="Equal" Type="String"></asp:CompareValidator>
+                            </div>
                         </div>
                         <hr />
                         <asp:Button ID="regBtn" runat="server" Text="Register" CssClass="btn btn-primary" OnClick="regBtn_Click" />

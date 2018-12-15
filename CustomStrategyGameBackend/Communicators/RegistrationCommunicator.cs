@@ -27,7 +27,7 @@ namespace CustomStrategyGameBackend.Communicators
                 }
                 else
                 {
-                    response = new HttpResponseMessage(HttpStatusCode.OK)
+                    response = new HttpResponseMessage(HttpStatusCode.BadRequest)
                     {
                         Content = new StringContent(JsonConvert.SerializeObject(registrationStatus), Encoding.ASCII, "application/json")
                     };
