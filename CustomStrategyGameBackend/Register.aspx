@@ -47,9 +47,11 @@
                             <asp:Label ID="passtxtLbl" runat="server" Text="Password" CssClass="col-form-label col-md-3"></asp:Label>
                             <div class="col-md-7">
                                 <asp:TextBox ID="passtxt" MaxLength="16" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="passtxtReg" runat="server" ErrorMessage="Password must be 8-16 characters long" ControlToValidate="passtxt" CssClass="alert-danger" ValidationExpression="\s*\S.{8,16}\S\s*" ></asp:RegularExpressionValidator>
+                            </div>
+                            <div class="col-md-2">
                                 <asp:RequiredFieldValidator ID="passtxtReq" runat="server" ErrorMessage="Password is required." ControlToValidate="passtxt" CssClass="alert-danger"></asp:RequiredFieldValidator>
                             </div>
-                            <div class="col-md-2"></div>
                         </div>
                         <div class="form-group form-row">
                             <asp:Label ID="passLbl" runat="server" Text="Verify Password" CssClass="col-form-label col-md-3"></asp:Label>

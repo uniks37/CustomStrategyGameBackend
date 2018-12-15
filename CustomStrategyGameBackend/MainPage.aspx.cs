@@ -18,7 +18,6 @@ namespace CustomStrategyGameBackend
         public MainPage mainPage;
         private const string uri = "https://localhost:44347/api/Logout";
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             mainPage = new MainPage();

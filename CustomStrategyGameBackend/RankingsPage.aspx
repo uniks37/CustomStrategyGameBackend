@@ -23,9 +23,6 @@
                         <a class="nav-link" href="#">Rankings<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Global Standing</a>
-                    </li>
-                    <li class="nav-item">
                         <asp:LinkButton ID="logoutBtn" runat="server" CssClass="nav-link">Logout</asp:LinkButton>
                     </li>
                 </ul>

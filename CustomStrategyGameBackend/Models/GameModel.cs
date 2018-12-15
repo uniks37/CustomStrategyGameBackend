@@ -12,9 +12,6 @@ namespace CustomStrategyGameBackend.Models
         public GameModel()
             : base("name=GameModel")
         {
-            string pass = Encrypt.DecryptString(Encrypt.Password, Encrypt.Paraphrase);
-            //Database.Connection.ConnectionString = Database.Connection.ConnectionString.Replace("xxxxxxxxxx", pass);
-            //Console.WriteLine(Database.Connection.ConnectionString);
         }
 
         public virtual DbSet<Gamer> Gamers { get; set; }

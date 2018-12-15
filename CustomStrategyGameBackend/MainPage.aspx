@@ -31,10 +31,23 @@
                 </ul>
             </div>
         </nav>
-
         <div class="jumbotron">
             <h1>Hey <%= mainPage.uname %>!</h1>
             <p>Welcome to our strategy game! It is custom and at a very primitive stage! But we are trying to improve it.</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-5">
+                <div class="jumbotron">
+                    <asp:Label ID="Label1" runat="server" Text="Search Your Opponent:"></asp:Label>
+                    <asp:TextBox ID="unameSearchTxt" runat="server" CssClass="form-group"></asp:TextBox>
+                    <asp:Button ID="seachBtn" runat="server" Text="Search" CssClass="btn btn-light"/>
+                </div>
+            </div>
+            <div class="col-4">
+
+            </div>
         </div>
 
         <script src="Scripts/bootstrap.min.js"></script>

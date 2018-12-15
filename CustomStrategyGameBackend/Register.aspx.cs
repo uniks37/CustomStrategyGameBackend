@@ -35,9 +35,10 @@ namespace CustomStrategyGameBackend
                 Task<HttpResponseMessage> responseTask = client.PostAsync(uri, new StringContent(Encrypt.EncryptString(sendingLink, "enigma"), Encoding.UTF8, "application/json"));
                 HttpResponseMessage response = responseTask.Result;
                 string val = response.Content.ReadAsStringAsync().Result;
+
                 if (response.IsSuccessStatusCode)
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + val + "')", true);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Success')", true);
                 }
                 else
                 {

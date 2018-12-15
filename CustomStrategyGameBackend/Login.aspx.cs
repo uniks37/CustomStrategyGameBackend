@@ -81,7 +81,9 @@ namespace CustomStrategyGameBackend
                 }
                 else
                 {
-                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + val + "')", true);
+
+                    TokenUname value = JsonConvert.DeserializeObject<TokenUname>(val);
+                    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + value.Token_Id + "')", true);
                 }
             }
 
