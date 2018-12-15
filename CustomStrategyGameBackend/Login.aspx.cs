@@ -1,4 +1,5 @@
 ﻿using CustomStrategyGameBackend.ComModels;
+using CustomStrategyGameBackend.Models;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
@@ -29,7 +30,9 @@ namespace CustomStrategyGameBackend
                 // Read the cookie information and display it.
                 if (!IsPostBack && myCookie != null)
                 {
-                    HttpResponseMessage responseTask = await client.PostAsync(uri, new StringContent(myCookie.Value, Encoding.UTF8, "application/json"));
+                    TokenUname tokenUname = JsonConvert.DeserializeObject<TokenUname>(myCookie.Value.ToString());
+                    MessageWrapper<TokenUname> msgInfo = new MessageWrapper<TokenUname>() { Message = tokenUname };
+                    HttpResponseMessage responseTask = await client.PostAsync(uri, new StringContent(Encrypt.EncryptString(JsonConvert.SerializeObject(msgInfo), "enigma"), Encoding.UTF8, "application/json"));
                     HttpResponseMessage response = responseTask;
                     if (response.IsSuccessStatusCode)
                     {
@@ -62,14 +65,18 @@ namespace CustomStrategyGameBackend
                 LoginGamerInfo lgInfo = new LoginGamerInfo(unametxt.Text, passwordHashed, remMeChecked);
                 MessageWrapper<LoginGamerInfo> msgInfo = new MessageWrapper<LoginGamerInfo>() { Message = lgInfo };
                 string sendingLink = JsonConvert.SerializeObject(msgInfo);
-                Task<HttpResponseMessage> responseTask = client.PostAsync(uri, new StringContent(sendingLink, Encoding.UTF8, "application/json"));
+                Task<HttpResponseMessage> responseTask = client.PostAsync(uri, new StringContent(Encrypt.EncryptString(sendingLink, "enigma"), Encoding.UTF8, "application/text"));
                 HttpResponseMessage response = responseTask.Result;
                 string val = response.Content.ReadAsStringAsync().Result;
                 if (response.IsSuccessStatusCode)
                 {
-                    HttpCookie myCookie = new HttpCookie("GameCookie");
-                    myCookie.Value = val;
+                    HttpCookie myCookie = new HttpCookie("GameCookie")
+                    {
+                        Value = val
+                    };
                     Response.Cookies.Add(myCookie);
+                    Session["uname"] = JsonConvert.DeserializeObject<TokenUname>(val).Uname;
+                    Session["token_id"] = JsonConvert.DeserializeObject<TokenUname>(val).Token_Id;
                     Response.Redirect("MainPage.aspx");
                 }
                 else

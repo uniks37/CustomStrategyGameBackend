@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="CustomStrategyGameBackend.MainPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RankingsPage.aspx.cs" Inherits="CustomStrategyGameBackend.RankingsPage" %>
 
 <!DOCTYPE html>
 
@@ -16,24 +16,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="RankingsPage.aspx">Rankings</a>
+                        <a class="nav-link" href="MainPage.aspx">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Rankings<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Global Standing</a>
                     </li>
                     <li class="nav-item">
-                        <asp:LinkButton ID="logoutBtn" runat="server" CssClass="nav-link" OnClick="logoutBtn_Click">Logout</asp:LinkButton>
+                        <asp:LinkButton ID="logoutBtn" runat="server" CssClass="nav-link">Logout</asp:LinkButton>
                     </li>
                 </ul>
             </div>
         </nav>
 
         <div class="jumbotron">
-            <h1>Hey <%= mainPage.uname %>!</h1>
+            <h1>Hey <%= rankingPage.uname %>!</h1>
             <p>Welcome to our strategy game! It is custom and at a very primitive stage! But we are trying to improve it.</p>
         </div>
 
@@ -43,3 +43,4 @@
     </form>
 </body>
 </html>
+

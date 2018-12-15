@@ -10,7 +10,7 @@
 namespace CustomStrategyGameBackend {
     
     
-    public partial class MainPage {
+    public partial class LoggedOutPage {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,12 @@ namespace CustomStrategyGameBackend {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// logoutBtn control.
+        /// loginLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton logoutBtn;
+        protected global::System.Web.UI.WebControls.HyperLink loginLink;
     }
 }

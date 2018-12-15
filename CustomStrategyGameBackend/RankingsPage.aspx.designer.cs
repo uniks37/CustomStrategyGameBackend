@@ -10,7 +10,7 @@
 namespace CustomStrategyGameBackend {
     
     
-    public partial class MainPage {
+    public partial class RankingsPage {
         
         /// <summary>
         /// form1 control.

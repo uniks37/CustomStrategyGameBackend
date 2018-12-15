@@ -31,6 +31,15 @@ namespace CustomStrategyGameBackend {
         protected global::System.Web.UI.WebControls.TextBox emailtxt;
         
         /// <summary>
+        /// emailReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator emailReq;
+        
+        /// <summary>
         /// unametxt control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace CustomStrategyGameBackend {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox unametxt;
+        
+        /// <summary>
+        /// unameReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator unameReq;
         
         /// <summary>
         /// passtxtLbl control.
@@ -58,6 +76,15 @@ namespace CustomStrategyGameBackend {
         protected global::System.Web.UI.WebControls.TextBox passtxt;
         
         /// <summary>
+        /// passtxtReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passtxtReq;
+        
+        /// <summary>
         /// passLbl control.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,24 @@ namespace CustomStrategyGameBackend {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passverifytxt;
+        
+        /// <summary>
+        /// passverifytxtReq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passverifytxtReq;
+        
+        /// <summary>
+        /// passverifytxtCmp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator passverifytxtCmp;
         
         /// <summary>
         /// regBtn control.

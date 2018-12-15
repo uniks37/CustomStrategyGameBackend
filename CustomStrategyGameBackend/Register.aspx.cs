@@ -22,17 +22,17 @@ namespace CustomStrategyGameBackend
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void regBtn_Click(object sender, EventArgs e)
         {
+            
             using (var client = new HttpClient())
             {
                 string passwordHashed = Encoding.ASCII.GetString(new SHA256Managed().ComputeHash(Encoding.ASCII.GetBytes(passtxt.Text)));
                 RegisterGamerInfo regInfo = new RegisterGamerInfo(unametxt.Text, passwordHashed, emailtxt.Text);
                 string sendingLink = JsonConvert.SerializeObject(regInfo);
-                Task<HttpResponseMessage> responseTask = client.PostAsync(uri, new StringContent(sendingLink, Encoding.UTF8, "application/json"));
+                Task<HttpResponseMessage> responseTask = client.PostAsync(uri, new StringContent(Encrypt.EncryptString(sendingLink, "enigma"), Encoding.UTF8, "application/json"));
                 HttpResponseMessage response = responseTask.Result;
                 string val = response.Content.ReadAsStringAsync().Result;
                 if (response.IsSuccessStatusCode)

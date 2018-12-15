@@ -1,5 +1,6 @@
 ﻿using CustomStrategyGameBackend.ComModels;
 using CustomStrategyGameBackend.Facades;
+using CustomStrategyGameBackend.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace CustomStrategyGameBackend.Communicators
             try
             {
                 HttpResponseMessage response;
-                MessageWrapper messageWrapper = JsonConvert.DeserializeObject<MessageWrapper>(value);
+                MessageWrapper messageWrapper = JsonConvert.DeserializeObject<MessageWrapper>(Encrypt.DecryptString(value, "enigma"));
 
                 if (new MessageWrapper<TokenUname>().MessageType == messageWrapper.MessageType)
                 {

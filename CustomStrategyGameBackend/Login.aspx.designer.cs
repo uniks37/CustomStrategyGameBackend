@@ -31,6 +31,15 @@ namespace CustomStrategyGameBackend {
         protected global::System.Web.UI.WebControls.TextBox unametxt;
         
         /// <summary>
+        /// unametxtVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator unametxtVal;
+        
+        /// <summary>
         /// passtxt control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace CustomStrategyGameBackend {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passtxt;
+        
+        /// <summary>
+        /// passtxtVal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator passtxtVal;
         
         /// <summary>
         /// remMe control.

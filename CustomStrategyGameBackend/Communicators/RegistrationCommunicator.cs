@@ -1,4 +1,5 @@
 ﻿using CustomStrategyGameBackend.ComModels;
+using CustomStrategyGameBackend.Models;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -15,7 +16,7 @@ namespace CustomStrategyGameBackend.Communicators
             {
                 HttpResponseMessage response;
 
-                RegisterGamerInfo registerGamerInfo = JsonConvert.DeserializeObject<RegisterGamerInfo>(modelString);
+                RegisterGamerInfo registerGamerInfo = JsonConvert.DeserializeObject<RegisterGamerInfo>(Encrypt.DecryptString(modelString, "enigma"));
                 RegistrationStatus registrationStatus = Facades.RegisterFacade.RegisterGamer(registerGamerInfo.Uname, registerGamerInfo.EmailId, registerGamerInfo.Password);
                 if (registrationStatus.ErrorCode == 200)
                 {

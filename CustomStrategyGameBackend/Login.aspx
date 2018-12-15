@@ -31,19 +31,22 @@
                             <label class="col-form-label col-md-3" for="unametxt">Username</label>
                             <div class="col-md-7">
                                 <asp:TextBox ID="unametxt" runat="server" CssClass="form-control" ></asp:TextBox>                            
+                                <asp:RequiredFieldValidator ID="unametxtVal" runat="server" ErrorMessage="Username is required." ControlToValidate="unametxt" CssClass="alert-danger"></asp:RequiredFieldValidator>                                                        
                             </div>
                             <div class="col-md-2"></div>
                         </div>
                         <div class="form-group form-row">
                             <label class="col-form-label col-md-3" for="unamepass">Password</label>
                             <div class="col-md-7">
-                                <asp:TextBox ID="passtxt" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox></div>
-                            <div class="col-md-2"></div>
+                                <asp:TextBox ID="passtxt" MaxLength="16" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox></div>
+                            <div class="col-md-2">
+                                <asp:RequiredFieldValidator ID="passtxtVal" runat="server" ErrorMessage="Password is required." ControlToValidate="passtxt" CssClass="alert-danger"></asp:RequiredFieldValidator>                            
+                            </div>
                         </div>
                         <div class="form-group">
                             <div class="form-check">
                                 <asp:CheckBox ID="remMe" runat="server" CssClass="form-check-input" OnCheckedChanged="remMe_CheckedChanged"/>
-                                <asp:Label ID="remMeLbl" runat="server" Text="Label" CssClass="form-check-label">Keep me posted</asp:Label>
+                                <asp:Label ID="remMeLbl" runat="server" Text="Label" CssClass="form-check-label" >Keep me posted</asp:Label>
                                 
                             </div>
                         </div>

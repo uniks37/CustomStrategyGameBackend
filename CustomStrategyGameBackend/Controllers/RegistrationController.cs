@@ -15,10 +15,5 @@ namespace CustomStrategyGameBackend.Controllers
         {
             return new RegistrationCommunicator().GetRegistered(value.Content.ReadAsStringAsync().Result);
         }
-
-        // PUT: api/Registration/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
     }
 }
